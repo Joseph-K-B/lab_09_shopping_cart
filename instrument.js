@@ -2,7 +2,7 @@
 
 const guitar = {
     id: 'guitar',
-    name: 'martin',
+    name: '6-er',
     image: 'guitar_asset.png',
     description: 'B-e-a-utifal guitar',
     category: 'string-instument',
@@ -11,7 +11,7 @@ const guitar = {
 };
 const piano = {
     id: 'piano', 
-    name: 'yamaha',
+    name: 'Keys',
     image: 'piano_2_asset.png',
     description: 'Keys',
     category: 'mechanical-instrument',
@@ -19,16 +19,26 @@ const piano = {
 };
 const violin = {
     id: 'violin',
-    name: 'fiddler',
+    name: 'Fiddle',
     image: 'violin_asset.png',
     description: 'fiddle',
     category: 'string-instument',
     price: 3.00,
 };
+const saxophone = {
+    id: 'saxophone',
+    name: 'Sax', 
+    image: 'saxophone_asset.gif',    
+    description: 'tenor',
+    category: 'woodwind',
+    price: 3.00,
+
+};
 const instruments = [
     guitar,
     piano,
-    violin
+    violin,
+    saxophone
 ];
 
 export default instruments;
