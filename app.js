@@ -1,9 +1,10 @@
-// import functions
+import instruments from './instrument.js';
+import { renderInstruments } from './render-instruments.js';
+console.log(instruments);
 
-// reference needed DOM elements
+const instrumentsUL = document.getElementById('instruments');
 
-
-// set event listeners 
-  // get user input(s)
-  // do any needed work with the value(s)
-  // update DOM to reflect new value(s)
+for (let instrument of instruments) {
+    const intrumentLI = renderInstruments(instrument);
+    instrumentsUL.appendChild(intrumentLI);
+}
