@@ -1,4 +1,4 @@
-import instruments from './instrument.js';
+import instruments from './data/instrument.js';
 import { renderInstruments } from './render-instruments.js';
 console.log(instruments);
 

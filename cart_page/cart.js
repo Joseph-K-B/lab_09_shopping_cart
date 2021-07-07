@@ -1,3 +1,0 @@
-const cart = [
-    { id: 1, qty:2 }
-]
