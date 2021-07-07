@@ -6,6 +6,7 @@ const tableStructure = document.getElementById('table-body');
 
 for (let product of cart) {
     const inst = findID(instruments, product.id);
+    console.log(inst);
     const row = renderRow(inst, product);
     tableStructure.appendChild(row);
 }
