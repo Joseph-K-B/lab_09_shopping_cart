@@ -4,7 +4,7 @@ const guitar = {
     id: '1',
     name: '6-er',
     image: 'guitar_asset.png',
-    description: 'B-e-a-utifal guitar',
+    description: 'guitar',
     category: 'string-instument',
     price: 1.00, 
 
