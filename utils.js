@@ -1,4 +1,4 @@
-// import instruments from "./data/instrument";
+import instruments from "./data/instrument";
 
 export function findID(products, id){
     

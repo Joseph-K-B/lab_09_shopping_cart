@@ -28,7 +28,7 @@ test ('should return proper instrument', (expect) =>{
         id: 'guitar',
         name: '6-er',
         image: 'guitar_asset.png',
-        description: 'B-e-a-utifal guitar',
+        description: 'B-e-a-utiful guitar',
         category: 'string-instument',
         price: 1.00, 
     
@@ -36,3 +36,5 @@ test ('should return proper instrument', (expect) =>{
     const actual = renderInstruments (guitar);
     expect.equal(actual.outerHTML, expected);
 });
+
+test ('')
