@@ -3,6 +3,7 @@
 
 const test = QUnit.test;
 import { renderInstruments } from '../render-instruments.js';
+import { fetchTotal } from '../utils.js';
 
 
 
@@ -28,11 +29,30 @@ test ('should return proper instrument', (expect) =>{
         id: 'guitar',
         name: '6-er',
         image: 'guitar_asset.png',
-        description: 'B-e-a-utifal guitar',
+        description: 'B-e-a-utiful guitar',
         category: 'string-instument',
         price: 1.00, 
     
     };
     const actual = renderInstruments (guitar);
     expect.equal(actual.outerHTML, expected);
+});
+
+test ('should return cart total', expect=>{
+    const cart = [
+        { id: 1, qty: 2 },
+        { id: 2, qty: 1 },
+    ];
+    const data = [{
+        id: 1,
+        price: 2
+    }, 
+    {
+        id: 2,
+        price: 4
+
+    }];
+    const expected = 8;
+    const actual = fetchTotal(data, cart);
+    expect.equal(expected, actual);
 });
