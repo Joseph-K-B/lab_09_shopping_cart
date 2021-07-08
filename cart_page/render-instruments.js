@@ -5,7 +5,7 @@ export function renderInstruments(instrument){
 
     const instrumentImg = document.createElement('img');
     instrumentImg.src = `./assets/${instrument.image}`;
-    instrumentImg.aly = instrument.name;
+    instrumentImg.alt = instrument.name;
 
     const instrumentSpan = document.createElement('span');
     instrumentSpan.textContent = `$${instrument.price}`;
