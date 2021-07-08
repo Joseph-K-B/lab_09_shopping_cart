@@ -11,6 +11,6 @@ for (let product of cart) {
     tableStructure.appendChild(row);
 }
 
-const totalCost = document.getElementById('order-total***');
+const totalCost = document.getElementById('order-total');
 const total = fetchTotal(instruments, cart);
 totalCost.textContent = convertUSD(total);

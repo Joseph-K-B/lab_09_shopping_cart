@@ -1,4 +1,4 @@
-import instruments from "./data/instrument";
+// import instruments from "./data/instrument";
 
 export function findID(products, id){
     
@@ -33,14 +33,23 @@ export function renderRow(instrumentItem, cartItem){
     dataQty.textContent = cartItem.qty;
     tableRow.appendChild(dataQty);
 
-    const dataTotal = document.createElement('td');
-    const total = instrumentItem.price * cartItem.qty;
-    dataTotal.textContent = convertUSD(total);
-    tableRow.appendChild(dataTotal);
+    // const dataTotal = document.createElement('td');
+    // const total = instrumentItem.price * cartItem.qty;
+    // dataTotal.textContent = convertUSD(total);
+    // tableRow.appendChild(dataTotal);
 
     return tableRow;
 
 }
+
+export function itemTotal(instrumentItem, cartItem){
+    const singleTotal = instrumentItem.price * cartItem.qty;
+    const tableRow = document.createElement('tr');
+    itemTotal.textContent = convertUSD(singleTotal);
+    tableRow.appendChild(itemTotal);
+
+}
+
 
 export function fetchTotal(instruments, cart){
     let purchaseTotal = 0;
@@ -50,4 +59,5 @@ export function fetchTotal(instruments, cart){
         purchaseTotal += instrument.price * product.qty;
     }
     return purchaseTotal;
+    
 }

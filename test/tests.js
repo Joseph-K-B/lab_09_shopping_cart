@@ -3,6 +3,7 @@
 
 const test = QUnit.test;
 import { renderInstruments } from '../render-instruments.js';
+import { fetchTotal } from '../utils.js';
 
 
 
@@ -37,4 +38,21 @@ test ('should return proper instrument', (expect) =>{
     expect.equal(actual.outerHTML, expected);
 });
 
-test ('')
+test ('should return cart total', expect=>{
+    const cart = [
+        { id: 1, qty: 2 },
+        { id: 2, qty: 1 },
+    ];
+    const data = [{
+        id: 1,
+        price: 2
+    }, 
+    {
+        id: 2,
+        price: 4
+
+    }];
+    const expected = 8;
+    const actual = fetchTotal(data, cart);
+    expect.equal(expected, actual);
+});
