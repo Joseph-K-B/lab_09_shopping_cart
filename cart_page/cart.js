@@ -1,5 +1,5 @@
 import { findID, fetchTotal, convertUSD } from '../utils.js';
-import { renderInstruments } from '../render-instruments.js';
+// import { renderInstruments } from '../render-instruments.js';
 import { renderRow } from './render-row.js';
 import instruments from '../data/instrument.js';
 // import cart from '../data/cart_data.js';
@@ -14,7 +14,7 @@ function renderCart(){
     for (let product of cart) {
         const inst = findID(instruments, product.id);
         console.log(inst);
-        const tableRow = renderR(inst, product);
+        const tableRow = renderRow(inst, product);
         tableStructure.appendChild(tableRow);
     }
     if (cart.length === 0){

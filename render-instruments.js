@@ -1,5 +1,6 @@
 export function renderInstruments(instrument){
     const instrumentLI = document.createElement('li');
+    instrumentLI.classList.add('instrumentItem');
     const instrumenth3 = document.createElement('h3');
     instrumenth3.textContent = instrument.name;
 

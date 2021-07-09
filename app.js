@@ -1,5 +1,5 @@
-import { instruments } from './data/instrument.js';
-import { renderInstruments } from '../cart_page/render-instruments.js';
+import instruments from './data/instrument.js';
+import { renderInstruments } from './render-instruments.js';
 import { itemAdd } from './storage-utils.js';
 // console.log(instruments);
 

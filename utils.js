@@ -15,12 +15,12 @@ export function convertUSD(number) {
     );
 }
 
-export function totalPrice(instuments, cart){
+export function totalPrice(instruments, cart){
     let orderTotal = 0;
 
     for (let item of cart) {
         const instrument = findID(instruments, item.id);
-        orderTotal += instrument.price * instuments.qty;
+        orderTotal += instrument.price * instruments.qty;
     }
     return orderTotal;
 }
