@@ -1,16 +1,35 @@
-import { findID, fetchTotal, renderRow, convertUSD } from '../utils.js';
+import { findID, fetchTotal, convertUSD } from '../utils.js';
+// import { renderInstruments } from '../render-instruments.js';
+import { renderRow } from './render-row.js';
 import instruments from '../data/instrument.js';
-import cart from '../data/cart_data.js';
+// import cart from '../data/cart_data.js';
+import { pullCart, emptyCart } from '../storage-utils.js';
 
 const tableStructure = document.getElementById('table-body');
 
-for (let product of cart) {
-    const inst = findID(instruments, product.id);
-    console.log(inst);
-    const row = renderRow(inst, product);
-    tableStructure.appendChild(row);
-}
 
-const totalCost = document.getElementById('order-total');
-const total = fetchTotal(instruments, cart);
-totalCost.textContent = convertUSD(total);
+function renderCart(){
+    const cart = pullCart();
+    console.log('cart contents', cart);
+    for (let product of cart) {
+        const inst = findID(instruments, product.id);
+        console.log(inst);
+        const tableRow = renderRow(inst, product);
+        tableStructure.appendChild(tableRow);
+    }
+    if (cart.length === 0){
+        tableStructure.innerHTML = '';
+    }
+    const totalCost = document.getElementById('order-total');
+    const total = fetchTotal(instruments, cart);
+    totalCost.textContent = convertUSD(total);
+
+    
+}
+renderCart();
+
+const clearBtn = document.getElementById('clear-button');
+clearBtn.addEventListener('click', ()=>{
+    emptyCart();
+    location.reload();
+});
