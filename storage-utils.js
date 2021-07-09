@@ -1,6 +1,6 @@
 import { findID } from './utils.js';
 
-export const cartContent = '';
+export const cartContent = 'empty-cart';
 
 export function pullCart() {
     let cartString = localStorage.getItem(cartContent) || '[]';
@@ -9,8 +9,8 @@ export function pullCart() {
     return cart;
 }
 
-export function itemAdd (findItemID){
-    const cart = cartContent();
+export function itemAdd(findItemID){
+    const cart = pullCart();
     const product = findID(cart, findItemID);
     console.log(product);
 
@@ -21,4 +21,14 @@ export function itemAdd (findItemID){
         const unoMas = { id: findItemID, qty: 1 };
         cart.push(unoMas);
     }
+    console.log(cart);
+
+  
+    localStorage.setItem(cartContent, JSON.stringify(cart));
+}
+    
+
+
+export function emptyCart() {
+    localStorage.removeItem(cartContent);
 }
