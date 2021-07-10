@@ -15,7 +15,7 @@ export function renderInstruments(instrument){
     button.textContent = 'Add to Cart';
     button.value = instrument.id;
     button.classList.add('add');
-
+    
     instrumentLI.appendChild(instrumenth3);
     instrumentLI.appendChild(instrumentImg);
     instrumentLI.appendChild(instrumentSpan);

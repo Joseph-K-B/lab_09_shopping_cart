@@ -36,3 +36,10 @@ footer {
 img {
     height: 90px;
 }
+.instrumentItem{
+    display: grid;
+    grid-template-columns: 2;
+    grid-template-rows: 2;
+    border: 3px solid black;
+    
+}
