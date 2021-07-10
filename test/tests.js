@@ -4,6 +4,7 @@
 const test = QUnit.test;
 import { renderInstruments } from '../render-instruments.js';
 import { fetchTotal } from '../utils.js';
+import { emptyCart, pullCart, cartContent } from '../storage-utils.js';
 
 
 
@@ -55,4 +56,17 @@ test ('should return cart total', expect=>{
     const expected = 8;
     const actual = fetchTotal(data, cart);
     expect.equal(expected, actual);
+});
+
+test ('does clearCart clear the cart', expect => {
+    const cart = [
+        { id: 1, qty: 2 },
+        { id: 2, qty: 1 },
+    ];
+    const cartString = JSON.stringify(cart);
+    localStorage.setItem(cartContent, cartString);
+    emptyCart();
+    const expected = [];
+    const actual = pullCart();
+    expect.deepEqual(expected, actual);
 });
