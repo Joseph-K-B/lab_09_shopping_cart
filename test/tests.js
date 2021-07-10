@@ -24,7 +24,7 @@ test('time to test a function', (expect) => {
 
 
 test ('should return proper instrument', (expect) =>{
-    const expected = `<li><h3>6-er</h3><img src="./assets/guitar_asset.png"><span>$1</span><button>Add to Cart</button></li>`;
+    const expected = `<li class="instrumentItem"><h3>6-er</h3><img src="./assets/guitar_asset.png" alt="6-er"><span>$1</span><button value="guitar" class="add">Add to Cart</button></li>`;
     const guitar = {
         id: 'guitar',
         name: '6-er',
