@@ -23,6 +23,12 @@ function renderCart(){
     
 }
 renderCart();
+const placeOrder = document.getElementById('order-btn');
+placeOrder.addEventListener('click', ()=>{
+    emptyCart();
+    alert('all set?');
+    window.location.replace('../index.html');
+});
 
 const clearBtn = document.getElementById('clear-button');
 clearBtn.addEventListener('click', ()=>{
