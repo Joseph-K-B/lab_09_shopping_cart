@@ -1,8 +1,6 @@
 import { findID, fetchTotal, convertUSD } from '../utils.js';
-// import { renderInstruments } from '../render-instruments.js';
 import { renderRow } from './render-row.js';
 import instruments from '../data/instrument.js';
-// import cart from '../data/cart_data.js';
 import { pullCart, emptyCart } from '../storage-utils.js';
 
 const tableStructure = document.getElementById('table-body');
@@ -10,10 +8,8 @@ const tableStructure = document.getElementById('table-body');
 
 function renderCart(){
     const cart = pullCart();
-    console.log('cart contents', cart);
     for (let product of cart) {
         const inst = findID(instruments, product.id);
-        console.log(inst);
         const tableRow = renderRow(inst, product);
         tableStructure.appendChild(tableRow);
     }

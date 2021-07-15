@@ -1,6 +1,3 @@
-// IMPORT MODULES under test here:
-// import { add } from '../calculator.js';
-
 const test = QUnit.test;
 import { renderInstruments } from '../render-instruments.js';
 import { fetchTotal } from '../utils.js';
@@ -8,18 +5,10 @@ import { emptyCart, pullCart, cartContent } from '../storage-utils.js';
 
 
 
-// name your test by what it is testing
-test('time to test a function', (expect) => {
-    //Arrange
-    // Set up your arguments and expectations
-    const expected = true;
-    
-    //Act 
-    // Call the function you're testing and set the result to a const
-    const actual = true; // use your function here
 
-    //Expect
-    // Make assertions about what is expected versus the actual result
+test('time to test a function', (expect) => {
+    const expected = true;
+    const actual = true;
     expect.equal(actual, expected);
 });
 

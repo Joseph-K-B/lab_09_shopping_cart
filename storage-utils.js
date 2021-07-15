@@ -12,7 +12,6 @@ export function pullCart() {
 export function itemAdd(findItemID){
     const cart = pullCart();
     const product = findID(cart, findItemID);
-    console.log(product);
 
     if (product){
         product.qty += 1;
@@ -21,7 +20,6 @@ export function itemAdd(findItemID){
         const unoMas = { id: findItemID, qty: 1 };
         cart.push(unoMas);
     }
-    console.log(cart);
 
   
     localStorage.setItem(cartContent, JSON.stringify(cart));
