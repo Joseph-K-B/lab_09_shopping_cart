@@ -4,7 +4,6 @@ export const cartContent = 'empty-cart';
 
 export function pullCart() {
     let cartString = localStorage.getItem(cartContent) || '[]';
-
     const cart = JSON.parse(cartString);
     return cart;
 }
