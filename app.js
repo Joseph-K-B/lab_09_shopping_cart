@@ -16,4 +16,4 @@ for (let btn of addBtn) {
 
     });
 }
-const orderBtn = document.querySelector('total')
+// const orderBtn = document.querySelector('total')
