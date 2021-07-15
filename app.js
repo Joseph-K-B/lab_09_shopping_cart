@@ -16,4 +16,7 @@ for (let btn of addBtn) {
 
     });
 }
-// const orderBtn = document.querySelector('total')
+const orderBtn = document.getElementById('order-button');
+orderBtn.addEventListener('click', ()=>{
+    window.location.replace('./cart_page/index.html');
+});
